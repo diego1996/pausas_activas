@@ -1,0 +1,136 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+/* 3D Slideshow */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.covi-img2 {
+    height: 20%;
+    width: 20%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.covi-img {
+    height: 50%;
+    width: 50%;
+}
+
+.icon-block {
+    padding: 0 10px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.wrap {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    margin: 0.3em;
+    padding: 1.2em 5em;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.button:hover {
+    box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #F44336;
+    color: white;
+}
+
+.blue {
+    background-color: #03A9F4;
+    color: white;
+}
+
+.ripple {
+    position: absolute;
+    background: rgba(0, 0, 0, .25);
+    border-radius: 100%;
+    transform: scale(0.2);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-animation: ripple .75s ease-out;
+    -moz-animation: ripple .75s ease-out;
+    animation: ripple .75s ease-out;
+}
+
+@-webkit-keyframes ripple {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes ripple {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.center-hor-ver {
+    margin-top: 10%;
+}
+
+.color-gray {
+    background-color: #ce9c6a;
+}
+
+body {
+    background-color: #fef7ce;
+    '''background-image: -webkit-linear-gradient(150deg, #1C3F7B 35%, #fef7ce 35%);'''
+    min-height: 600px;
+}

@@ -1,0 +1,79 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Pausas Activas{% endblock %}</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    {% block custom_css %}
+    {% endblock %}
+    {% block materialize %}
+        <link rel="stylesheet" href="{% static 'core/css/materialize.min.css' %}">
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'core/css/custom_style.css' %}" type="text/css"
+          media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<main>
+    {% block nav %}
+        <nav>
+            <div class="nav-wrapper blue">
+                <a href="{% url 'home' %}" class="brand-logo">Pausas Activas</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'admin:index' %}">Administrador</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>{% endif %}
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+</main>
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{% static 'core/js/materialize.js' %}"></script>
+<script src="{% static 'core/js/custom_js.js' %}"></script>
+{% block custom_js %}
+{% endblock %}
+</body>
+{% block footer %}
+    <footer class="page-footer blue footer-fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Pausas activas</h5>
+                    <p class="grey-text text-lighten-4">Este sistema permite automatizar gestionar el proceso de pausas
+                        activas en personas de oficina.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Enlaces de interés</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021 Copyright - Diego A Asencio C
+                <a class="grey-text text-lighten-4 right" href="#!">versión 0.0.1</a>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+</html>

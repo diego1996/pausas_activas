@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Pausas activas</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'core/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'core/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+<header class="top-nav">
+    <nav class="nav-extended">
+        <div class="nav-wrapper center" style="background-color: {{ company.primary_color }}">
+            <a class="brand-logo center" style="background-color: {{ company.primary_color }};" href="{% url 'home' %}">
+                <h5>Pausas activas - {{ company.name }}</h5>
+            </a>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!"></a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Cerrar sesión</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{ user }}<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+
+    <div class="section center-hor-ver">
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4 l4 offset-l1 offset-m1 right-align"
+                 style="background-color: {{ company.primary_color }}">
+                <div class="icon-block" style="width: auto; height: 600px">
+                    {% if company.mascot %}
+                        <img src="/media/{{ company.mascot }}" width="50%">
+                    {% else %}
+                        <img src="{% static 'core/images/coviamigo.gif' %}" width="50%">
+                    {% endif %}
+                    <h5 class="white-text">Actividades</h5>
+
+                    <p class="white-text light">Es hora de tu pausa activa</p>
+                    <h5 class="white-text">Unos minutos al día</h5>
+
+                    <p class="white-text light">Recupera energía, mejora tu desempeño y eficiencia</p>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l6" style="background-color: {{ company.secondary_color }}">
+                <div class="carousel scale-transition" id="demo-carousel" style="width: auto; height: 600px">
+                    {% if pauses %}
+                        {% for pause in pauses %}
+                            <div class="carousel-item">
+                                <div class="card"
+                                     style="background-color: {{ company.primary_color }}; top: -50%;">
+                                    <div class="card-image">
+                                        <a href="#"><img src="/media/{{ pause.image }}"></a>
+                                    </div>
+
+                                    <div class="card-action left-align">
+                                        <h6 class="white-text"><b>{{ pause.name }}</b></h6>
+                                        <p class="grey-text">Duración: {{ pause.duration }}</p>
+                                        <p class="grey-text">N° de Ejercicios: {{ pause.number_of_exercises }}</p>
+                                        <br>
+                                        <a href="{% url 'home_detail' slug=pause.slug %}">Ver ahora</a>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="carousel-item card blue darken-4">
+                            <div class="card-image">
+                                <a href="#"><img src="{% static 'core/images/1.jpg' %}"></a>
+                            </div>
+
+                            <div class="card-action left-align">
+                                <p>Ejemplo de pausa activa</p>
+                                <a href="#">Ver ahora</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{% static 'core/js/materialize.js' %}"></script>
+<script src="{% static 'core/js/init.js' %}"></script>
+<script src="{% static 'core/js/slider.js' %}"></script>
+
+</body>
+</html>
