@@ -1,0 +1,13 @@
+
+templates/base.html
+templates/base.html
+*.py
+*.ps1
+*.bat
+*.pyc
+*.exe
+*.pyc
+*.pyc
+entorno-pausas/Scripts/activate
+*.txt
+entorno-pausas/Lib/site-packages/setuptools-58.1.0.dist-info/LICENSE
