@@ -1,7 +1,6 @@
 # pausas_activas
 Proyecto de Pausas Activas en HTML/CSS/JS y Django
 
-{% if False %}
 
 # Introduction
 
