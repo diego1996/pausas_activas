@@ -32,9 +32,16 @@ $ python manage.py createsuperuser
 
 IMPORTANTE: Diligencia la administración de contenidos sugiriendo una contraseña segura.
 
-Para iniciar sesión en el sitio, ve a la URL /admin (e.j. http://127.0.0.1:8000/admin) e ingresa tus credenciales de id usuario y contraseña de administrador (serás redirigido a la página login, y entonces volverás a la URL de /admin después de haber ingresado tus datos).
+Para iniciar sesión en el sitio, ve a la URL /admin (e.j. http://127.0.0.1:8000/admin) e ingresa tus credenciales de id usuario y contraseña de administrador (serás redirigido a la página login, y entonces volverás a la URL de /admin después de haber ingresado tus datos)
 
 Después de instalar las dependencias, ejecuta el servidor 
 
 $ python manage.py runserver
+
+### Despliegue Docker:
+
+$ docker -compose --build
+$ docker -compose --up
+
+
 
