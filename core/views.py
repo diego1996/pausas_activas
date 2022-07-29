@@ -11,7 +11,7 @@ class IndexTemplateView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        company = Company.objects.get(owner=self.request.user)
+        company = Company.objects.first()
         pauses = ActivePause.objects.filter(company=company)
         context['company'] = company
         context['pauses'] = pauses
@@ -28,7 +28,7 @@ class IndexDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        company = Company.objects.get(owner=self.request.user)
+        company = Company.objects.first()
         pauses = ActivePause.objects.filter(company=company)
         context['company'] = company
         context['pauses'] = pauses
